@@ -26,10 +26,11 @@ class PostsController < ApplicationController
     end 
 
     def update
+        # binding.ppry
         post = Post.find(params[:id])
 
         if post.update(post_params)
-            render json: post
+            render json: Post.all
         else
             binding.pry
         end 
